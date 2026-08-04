@@ -59,8 +59,6 @@ Variational-REML-Spatial/
 │
 ├── results/
 │   ├── figures/
-│   ├── tables/
-│   └── output/
 │
 ├── manuscript/
 │   └── Variational_REML.pdf
