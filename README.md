@@ -40,25 +40,42 @@ The repository also contains a low-rank covariance approximation for large spati
 
 ```
 Variational-REML-Spatial/
-
+│
 ├── R/
+│   ├── utilities.R
+│   ├── graph_generation.R
+│   ├── data_generation.R
+│   ├── exact_mle.R
 │   ├── vrmle.R
 │   ├── lowrank_vrmle.R
-│   ├── simulation.R
-│   ├── utilities.R
+│   ├── inla.R
+│   ├── prediction.R
+│   ├── posterior.R
 │   └── plotting.R
 │
-├── data/
+├── simulations/
+│   ├── run_simulation.R
+│   └── simulation_parameters.R
 │
-├── examples/
+├── data/
+│   ├── simulated/
+│   └── breast_cancer/
 │
 ├── results/
+│   ├── figures/
+│   ├── tables/
+│   └── output/
 │
 ├── manuscript/
+│   └── Variational_REML.pdf
+│
+├── examples/
+│   └── example_analysis.R
 │
 ├── README.md
 ├── LICENSE
-└── CITATION.cff
+├── CITATION.cff
+└── .gitignore
 ```
 
 ---
