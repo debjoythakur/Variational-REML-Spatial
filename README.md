@@ -73,6 +73,83 @@ Variational-REML-Spatial/
 ```
 
 ---
+#Installation
+
+Clone the repository:
+
+git clone https://github.com/debjoythakur/Variational-REML-Spatial.git
+cd Variational-REML-Spatial
+
+Install the required R packages:
+
+install.packages(
+  c(
+    "MASS",
+    "Matrix",
+    "ggplot2",
+    "dplyr",
+    "RANN"
+  )
+)
+
+Install INLA separately:
+
+install.packages(
+  "INLA",
+  repos = c(
+    getOption("repos"),
+    INLA = "https://inla.r-inla-download.org/R/stable"
+  ),
+  dependencies = TRUE
+)
+
+Quick VRMLE example
+
+Run the following commands from the root directory of the repository:
+
+source("R/utilities.R")
+source("R/graph_generation.R")
+source("R/data_generation.R")
+source("R/vrmle.R")
+
+set.seed(123)
+
+# Construct an 8 x 8 lattice, giving n = 64 spatial units
+scenario <- build_scenario(m = 8)
+
+# Generate Gaussian ICAR spatial data
+simulated_data <- simulate_icar_data(
+  X = scenario$X,
+  H = scenario$H,
+  Kinv = scenario$Kinv,
+  beta = scenario$beta_true,
+  sigma2_e = scenario$sigma2_e_true,
+  sigma2_u = scenario$sigma2_u_true
+)
+
+# Fit the VRMLE model
+fit <- fit_variational_reml_train(
+  y_tr = simulated_data$y,
+  X_tr = scenario$X,
+  H_tr = scenario$H,
+  K = scenario$Kmat
+)
+
+# Estimated observation-error variance
+fit$sigma2_e
+
+# Estimated spatial-effect variance
+fit$sigma2_u
+
+# Estimated regression coefficients
+fit$beta
+
+# Algorithm diagnostics
+fit$converged
+fit$n_iter
+fit$elbo_trace
+
+This example runs because all functions required by fit_variational_reml_train() are sourced before fitting the model.
 
 # Installation
 
