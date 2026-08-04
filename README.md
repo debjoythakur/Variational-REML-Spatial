@@ -54,7 +54,7 @@ Variational-REML-Spatial/
 │   └── plotting.R
 │
 ├── simulations/
-│   ├── run_simulation.Rmd
+│   ├── run_simulation.R
 │   └── simulation_parameters.R
 │
 ├── results/
