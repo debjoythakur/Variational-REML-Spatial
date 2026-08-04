@@ -73,15 +73,19 @@ Variational-REML-Spatial/
 ```
 
 ---
-#Installation
+# Installation
 
-Clone the repository:
+Clone the repository
 
+```bash
 git clone https://github.com/debjoythakur/Variational-REML-Spatial.git
 cd Variational-REML-Spatial
+```
+
+Open R or RStudio and install the required packages.
 
 Install the required R packages:
-
+```r
 install.packages(
   c(
     "MASS",
@@ -92,7 +96,7 @@ install.packages(
   )
 )
 
-Install INLA separately:
+#### Install INLA separately:
 
 install.packages(
   "INLA",
@@ -103,10 +107,12 @@ install.packages(
   dependencies = TRUE
 )
 
-Quick VRMLE example
+```
+---
 
-Run the following commands from the root directory of the repository:
+# Example
 
+```r
 source("R/utilities.R")
 source("R/graph_generation.R")
 source("R/data_generation.R")
@@ -146,33 +152,6 @@ fit$beta
 
 # Algorithm diagnostics
 fit$converged
-fit$n_iter
-fit$elbo_trace
-
-This example runs because all functions required by fit_variational_reml_train() are sourced before fitting the model.
-
-# Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/debjoythakur/Variational-REML-Spatial.git
-```
-
-Open R or RStudio and install the required packages.
-
----
-
-# Example
-
-```r
-source("R/vrmle.R")
-
-result <- vrmle(
-    Y = Y,
-    X = X,
-    W = W
-)
 ```
 
 ---
