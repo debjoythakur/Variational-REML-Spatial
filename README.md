@@ -54,12 +54,8 @@ Variational-REML-Spatial/
 │   └── plotting.R
 │
 ├── simulations/
-│   ├── run_simulation.R
+│   ├── run_simulation.Rmd
 │   └── simulation_parameters.R
-│
-├── data/
-│   ├── simulated/
-│   └── breast_cancer/
 │
 ├── results/
 │   ├── figures/
@@ -70,7 +66,7 @@ Variational-REML-Spatial/
 │   └── Variational_REML.pdf
 │
 ├── examples/
-│   └── example_analysis.R
+│   └── VREML_Simulation.Rmd
 │
 ├── README.md
 ├── LICENSE
